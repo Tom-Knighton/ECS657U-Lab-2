@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private int _count;
+    private Vector3 _cachedPosition;
 
     private const int TotalPickUps = 9;
     private const string PickUpTag = "PickUp";
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _count = 0;
         winText.text = string.Empty;
+        _cachedPosition = Vector3.zero;
     }
 
     void OnMove(InputValue val)
